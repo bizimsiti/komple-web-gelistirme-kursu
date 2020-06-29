@@ -59,6 +59,7 @@ loadQuestion();
 
 function loadQuestion(){
     if(quiz.isFinish()){
+        document.querySelector('#progress').innerHTML = "Quiz is Ended";
         showScore();
     }else{
 
@@ -95,12 +96,5 @@ function showProgress(){
     var totalQuestion = quiz.questions.length;
     var questionNumber = quiz.questionIndex+1;
     var html = 'Question '+ questionNumber + ' of ' + totalQuestion;
-
-    if(totalQuestion === questionNumber){
-        document.querySelector('#progress').innerHTML = "Quiz is Ended";
-    }else{
         document.querySelector('#progress').innerHTML = html;
-    }
-
-  
 }
